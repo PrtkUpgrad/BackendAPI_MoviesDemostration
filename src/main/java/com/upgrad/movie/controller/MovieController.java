@@ -32,14 +32,14 @@ public class MovieController {
         return new ResponseEntity<List<Movie>>(movies, HttpStatus.OK);
     }
 
-    // For add and update phone both
+    // For add and update movie both
     @RequestMapping(value = "/movie/add", method = RequestMethod.POST, consumes ="application/json")
     public ResponseEntity<Movie> createUser(@RequestBody Movie movie, UriComponentsBuilder ucBuilder) {
         movieService.addMovie(movie);
         return new ResponseEntity<Movie>(movie, HttpStatus.OK);
     }
 
-    // For getting a reqd. phone
+    // For getting a reqd. movie
     @RequestMapping(value = "/movie/{id}",  method = RequestMethod.GET,produces="application/json")
     public ResponseEntity<Movie> getMovieById(@PathVariable("id") int id) {
 
